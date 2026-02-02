@@ -6,7 +6,7 @@ services:
     container_name: wavo-qr-scout
     restart: unless-stopped
     networks:
-      - traefik_proxy
+      - public
     labels:
       - "traefik.enable=true"
       # Using the literal domain to avoid Environment Variable issues
