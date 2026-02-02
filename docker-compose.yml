@@ -6,20 +6,19 @@ services:
     container_name: wavo-qr-scout
     restart: unless-stopped
     networks:
-      - traefik
+      - traefik_proxy
     labels:
       - "traefik.enable=true"
-      # Match the router name to your stack name for clarity
-      - "traefik.http.routers.wavo-qr-scout.rule=Host(`${SCOUTING_DOMAIN}`)"
+      # Using the literal domain to avoid Environment Variable issues
+      - "traefik.http.routers.wavo-qr-scout.rule=Host(`scout.waverlyrobotics.org`)"
       - "traefik.http.routers.wavo-qr-scout.entrypoints=websecure"
       - "traefik.http.routers.wavo-qr-scout.tls.certresolver=le"
       - "traefik.http.routers.wavo-qr-scout.tls=true"
-      # This points Traefik to Nginx's internal port 80
+      # Port 80 for Nginx (Standard for QRScout production builds)
       - "traefik.http.services.wavo-qr-scout.loadbalancer.server.port=80"
-      # Tells Traefik which network to use to reach this container
-      - "traefik.docker.network=${TRAEFIK_NETWORK:-traefik_proxy}"
+      # Explicitly tell Traefik which network to use for routing
+      - "traefik.docker.network=traefik_proxy"
 
 networks:
-  traefik:
-    name: ${TRAEFIK_NETWORK:-traefik_proxy}
+  traefik_proxy:
     external: true
