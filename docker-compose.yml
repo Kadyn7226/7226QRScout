@@ -1,0 +1,23 @@
+services:
+  react-app:
+    build: .
+    container_name: wavo-qr-scout
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      # The entry point for the scouting subdomain
+      - "traefik.docker.network=${TRAEFIK_NETWORK:-traefik_proxy}"
+      - "traefik.http.routers.wavo-qr-scout.rule=Host(`${SCOUTING_DOMAIN}`)"
+      - "traefik.http.routers.wavo-qr-scout.entrypoints=websecure"
+      - "traefik.http.routers.wavo-qr-scout.tls.certresolver=le"
+      - "traefik.http.routers.wavo-qr-scout.tls=true"
+      # Nginx inside the container listens on port 80
+      - "traefik.http.services.wavo-qr-scout.loadbalancer.server.port=80"
+
+networks:
+  traefik:
+    name: ${TRAEFIK_NETWORK:-traefik_proxy}
+    external: true
+
