@@ -17,7 +17,7 @@ services:
       # Port 80 for Nginx (Standard for QRScout production builds)
       - "traefik.http.services.wavo-qr-scout.loadbalancer.server.port=80"
       # Explicitly tell Traefik which network to use for routing
-      - "traefik.docker.network=traefik_proxy"
+      - "traefik.docker.network=public"
 
 networks:
   traefik_proxy:
