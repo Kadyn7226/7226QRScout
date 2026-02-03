@@ -1,6 +1,6 @@
 {
-  "title": "QRScout",
-  "page_title": "Rebuilt",
+  "title": "WavoQRScout",
+  "page_title": "Rebuilt 2026",
   "delimiter": "\t",
   "teamNumber": 7226,
   "floatingField": {
@@ -49,8 +49,8 @@
       "muted_foreground": "0 0% 63.9%",
       "accent": "47 100% 50%",
       "accent_foreground": "284 72% 16%",
-      "destructive": "0 62.8% 30.6%",
-      "destructive_foreground": "0 0% 98%",
+      "destructive": "284 72% 22%",
+      "destructive_foreground": "47 100% 50%",
       "border": "284 72% 16%",
       "input": "0 0% 14.9%",
       "ring": "284 70% 32.5%",
@@ -135,7 +135,7 @@
           "choices": {
             "No": "Didn't Climb",
             "L1": "Level 1",
-            "F": "Failed專業 Climb"
+            "F": "Failed Climb"
           }
         },
         {
