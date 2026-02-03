@@ -1,6 +1,6 @@
 {
   "title": "WavoQRScout",
-  "page_title": "Rebuilt 2026",
+  "page_title": "7226 Rebuilt 2026",
   "delimiter": "\t",
   "teamNumber": 7226,
   "floatingField": {
@@ -77,13 +77,31 @@
           "max": 19999
         },
         {
+          "title": "Starting Alliance",
+          "description": "Starting Alliance",
+          "type": "select",
+          "required": false,
+          "code": "SA",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "R1": "Red 1",
+            "R2": "Red 2",
+            "R3": "Red 3",
+            "B1": "Blue 1",
+            "B2": "Blue 2",
+            "B3": "Blue 3",
+            "NS": "No Show"
+          }
+        },
+        {
           "title": "Match Number",
           "description": "Enter the match number.",
           "type": "number",
           "required": true,
           "code": "matchNumber",
           "formResetBehavior": "increment",
-          "defaultValue": 0
+          "defaultValue": 1
         },
         {
           "title": "Scouter Name",
@@ -206,6 +224,16 @@
             "M": "Middle",
             "R": "Right"
           }
+        },
+        {
+          "title": "Climbing Time",
+          "description": "How long does it take to climb?",
+          "type": "timer",
+          "required": false,
+          "code": "climbTime",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "outputType": "average"
         }
       ]
     },
@@ -221,7 +249,8 @@
           "defaultValue": "",
           "choices": {
             "D": "Died",
-            "FO": "Fell Over"
+            "FO": "Fell Over",
+            "NA": "N/A"
           }
         },
         {
@@ -266,9 +295,21 @@
             "G3": "4 - Perfectionist",
             "G4": "5 - Above Standard"
           }
+        },
+        {
+          "title": "Where could the robot shoot from?",
+          "type": "multi-select",
+          "required": false,
+          "code": "sf",
+          "formResetBehavior": "reset",
+          "choices": {
+            "ANY": "Anywhere",
+            "LH": "Left of Hub",
+            "CH": "Center Hub",
+            "RH": "Right of Hub"
+          }
         }
       ]
     }
   ]
 }
-
