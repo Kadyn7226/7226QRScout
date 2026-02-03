@@ -2,7 +2,7 @@ import { useQRScoutState } from '@/store/store';
 import { setColorScheme } from '@/util/theme';
 import { createContext, useContext, useEffect, useState } from 'react';
 
-export type Theme = 'dark' | 'light' | 'system';
+export type Theme = 'dark';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
