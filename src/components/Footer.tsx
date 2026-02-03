@@ -1,7 +1,8 @@
 // src/components/Footer.tsx
 import { useQRScoutState } from '@/store/store';
 import { Heart } from 'lucide-react';
-import { Logo } from './Logo';
+// Import your specific logo here
+import myLogo from '@/assets/7226_logo_animated2.svg';
 
 export function Footer() {
   const teamNumber = useQRScoutState(state => state.formData.teamNumber);
@@ -9,12 +10,16 @@ export function Footer() {
   return (
     <footer>
       <div className="mt-8 flex flex-col items-center justify-center p-2 gap-2">
-        {/* This container controls the size of your SVG */}
         <div className="h-24 w-96">
-          <Logo />
+          {/* Your animated logo used directly */}
+          <img 
+            src={myLogo} 
+            alt="Team 7226 Logo" 
+            className="h-full w-full object-contain" 
+          />
         </div>
         
-        {/* Conditionally render the heart and team number */}
+        {/* Shows heart and number for any team that isn't yours */}
         {teamNumber !== 7226 && (
           <>
             <Heart className="text-primary size-8 fill-primary" />
