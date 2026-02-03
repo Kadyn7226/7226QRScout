@@ -1,6 +1,5 @@
 import { useQRScoutState } from '@/store/store';
-import { Heart } from 'lucide-react';
-import { Logo } from './Logo';
+
 
 export function Footer() {
   const teamNumber = useQRScoutState(state => state.formData.teamNumber);
@@ -10,12 +9,6 @@ export function Footer() {
         <div className="h-24 w-96">
         <img src="src/assets/7226_logo_animated2.svg" alt="WavOps Logo"></img>
         </div>
-        {teamNumber !== 2713 && (
-          <>
-            <Heart className="text-primary size-8 fill-primary" />
-            <span className="text-2xl text-primary font-rhr-ns">
-              {teamNumber}
-            </span>
           </>
         )}
       </div>
