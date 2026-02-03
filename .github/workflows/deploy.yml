@@ -25,10 +25,9 @@ env:
   VITE_TBA_API_KEY: ${{ secrets.TBA_API_KEY }}
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: github-pages
+      name: secrets # <--- Change this from 'github-pages' to 'secrets'
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
