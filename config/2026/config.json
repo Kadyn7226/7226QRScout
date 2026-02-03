@@ -297,7 +297,7 @@
           }
         },
         {
-          "title": "Where could the robot shoot from?",
+          "title": "Shooting Location",
           "type": "multi-select",
           "required": false,
           "code": "sf",
