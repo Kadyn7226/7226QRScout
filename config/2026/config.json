@@ -158,7 +158,7 @@
           }
         },
         {
-          "title": "Climb Position",
+          "title": "Attempted Climb Position",
           "description": "Where left to right the robot climbed in auto",
           "type": "select",
           "required": false,
@@ -167,6 +167,7 @@
           "defaultValue": "No",
           "choices": {
             "No": "Didn't Climb",
+            "AT": "Attempted Climb",
             "L": "Left",
             "M": "Middle",
             "R": "Right"
@@ -212,7 +213,7 @@
           }
         },
         {
-          "title": "Climb Position",
+          "title": "Attempted Climb Position",
           "description": "Where left to right the robot climbed",
           "type": "select",
           "required": false,
@@ -221,6 +222,7 @@
           "defaultValue": "No",
           "choices": {
             "No": "Didn't Climb",
+            "AT": "Attempted Climb",
             "L": "Left",
             "M": "Middle",
             "R": "Right"
