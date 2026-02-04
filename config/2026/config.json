@@ -190,9 +190,11 @@
             "TenTwenty": "10-20",
             "TwentyThirty": "20-30",
             "ThirtyForty": "30-40",
+            "FortyFifty": "40-50",
             "FiftySixty": "50-60",
-            "SixtySeventy": "70-80",
-            "EightyNinty": "80+"
+            "SixtySeventy": "60-70",
+            "SeventyEighty": "70-80",
+            "EightyPlus": "80+"
           }
         },
         {
@@ -324,9 +326,9 @@
           "choices": {
             "G": "1 - In Training",
             "G1": "2 - Newbie",
-            "G2": "3 - Excellent",
-            "G3": "4 - Perfectionist",
-            "G4": "5 - Above Standard"
+            "G2": "3 - Standard",
+            "G3": "4 - Above Standard",
+            "G4": "5 - Excellent"
           }
         },
         {
