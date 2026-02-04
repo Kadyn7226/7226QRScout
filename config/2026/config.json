@@ -167,7 +167,6 @@
           "defaultValue": "No",
           "choices": {
             "No": "Didn't Climb",
-            "AT": "Attempted Climb",
             "L": "Left",
             "M": "Middle",
             "R": "Right"
@@ -222,7 +221,6 @@
           "defaultValue": "No",
           "choices": {
             "No": "Didn't Climb",
-            "AT": "Attempted Climb",
             "L": "Left",
             "M": "Middle",
             "R": "Right"
