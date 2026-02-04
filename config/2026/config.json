@@ -136,12 +136,12 @@
         {
           "title": "Fuel scored",
           "description": "The amount of fuel scored in auto",
-          "type": "number",
+          "type": "counter",
           "required": false,
           "code": "FIA",
           "formResetBehavior": "reset",
           "defaultValue": 0,
-          "min": 0
+          "step": 1
         },
         {
           "title": "Climbed Tower",
@@ -180,20 +180,44 @@
         {
           "title": "Fuel Capacity",
           "description": "Approximate number of fuel that the robot can carry",
-          "type": "number",
+          "type": "select",
           "required": false,
           "code": "fuelPerCycle",
           "formResetBehavior": "reset",
-          "defaultValue": 0
+          "defaultValue": "",
+          "choices": {
+            "OneTen": "1-10",
+            "TenTwenty": "10-20",
+            "TwentyThirty": "20-30",
+            "ThirtyForty": "30-40",
+            "FiftySixty": "50-60",
+            "SixtySeventy": "70-80",
+            "EightyNinty": "80+"
+          }
         },
         {
           "title": "Cycles Per Shift",
           "description": "How many times the robot unloads its capacity in one alliance shift",
-          "type": "counter",
+          "type": "select",
           "required": false,
           "code": "cyclesPerShift",
           "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "One-Ten": "1-10",
+            "TenPlus": "10+",
+            "N/A": "N/A"
+          }
+        },
+        {
+          "title": "Fuel scored",
+          "description": "The amount of fuel scored in auto",
+          "type": "counter",
+          "required": false,
+          "code": "TFIA",
+          "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         },
         {
