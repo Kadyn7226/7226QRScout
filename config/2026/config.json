@@ -81,7 +81,7 @@
           "description": "Starting Alliance",
           "type": "select",
           "required": false,
-          "code": "SA",
+          "code": "startAlliance",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -123,7 +123,7 @@
           "description": "The starting position of the robot",
           "type": "select",
           "required": true,
-          "code": "Prsp",
+          "code": "startPosition",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -138,7 +138,7 @@
           "description": "The amount of fuel scored in auto",
           "type": "counter",
           "required": false,
-          "code": "FIA",
+          "code": "fuelScoredAuto",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "step": 1
@@ -223,11 +223,24 @@
           "description": "The amount of fuel scored in auto",
           "type": "counter",
           "required": false,
-          "code": "TFIA",
+          "code": "fuelScored",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
+        },
+        {
+          "title": "Shooting Location",
+          "type": "multi-select",
+          "required": false,
+          "code": "shootLocation",
+          "formResetBehavior": "reset",
+          "choices": {
+            "ANY": "Anywhere",
+            "LH": "Left of Hub",
+            "CH": "Center Hub",
+            "RH": "Right of Hub"
+          }
         },
         {
           "title": "Climbed Tower",
@@ -278,7 +291,7 @@
           "title": "Died/Fell Over",
           "type": "select",
           "required": false,
-          "code": "DFO",
+          "code": "diedOrFell",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -291,7 +304,7 @@
           "title": "Comments",
           "type": "text",
           "required": false,
-          "code": "co",
+          "code": "comments",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
@@ -306,7 +319,7 @@
           "title": "Intake Type",
           "type": "select",
           "required": false,
-          "code": "it",
+          "code": "intakeType",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -320,7 +333,7 @@
           "title": "Driver Proficiency",
           "type": "select",
           "required": false,
-          "code": "dp",
+          "code": "driverProficiency",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -330,21 +343,9 @@
             "G3": "4 - Above Standard",
             "G4": "5 - Excellent"
           }
-        },
-        {
-          "title": "Shooting Location",
-          "type": "multi-select",
-          "required": false,
-          "code": "sf",
-          "formResetBehavior": "reset",
-          "choices": {
-            "ANY": "Anywhere",
-            "LH": "Left of Hub",
-            "CH": "Center Hub",
-            "RH": "Right of Hub"
-          }
         }
       ]
     }
   ]
 }
+
