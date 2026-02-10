@@ -137,9 +137,7 @@ export default function TimerInput(props: ConfigurableInputProps) {
             <Play className="size-4" />
           )}
         </Button>
-    
-          <TimerReset className="size-4" />
-        </Button>
+
         <Button variant="outline" onClick={() => resetState({ force: false })}>
           <Undo className="size-4" />
         </Button>
