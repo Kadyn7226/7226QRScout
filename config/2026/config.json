@@ -9,23 +9,23 @@
   },
   "theme": {
     "light": {
-      "background": "0 0% 100%",
+      "background": "44 98% 59%",
       "foreground": "0 0% 3.9%",
-      "card": "0 0% 100%",
-      "card_foreground": "0 0% 3.9%",
-      "popover": "0 0% 100%",
-      "popover_foreground": "0 0% 3.9%",
-      "primary": "354.44 71.3% 47.9%",
-      "primary_foreground": "0 85.7% 97.3%",
-      "secondary": "33 94% 40.5%",
-      "secondary_foreground": "0 0% 9%",
-      "muted": "0 0% 96.1%",
+      "card": "284 40% 50%",
+      "card_foreground": "284 72% 12%",
+      "popover": "47 100% 50%",
+      "popover_foreground": "284 70% 32.5%",
+      "primary": "284 72% 20%",
+      "primary_foreground": "47 100% 50%",
+      "secondary": "47 100% 50%",
+      "secondary_foreground": "284 72% 16%",
+      "muted": "47 100% 50%",
       "muted_foreground": "0 0% 45.1%",
-      "accent": "0 0% 96.1%",
-      "accent_foreground": "0 0% 9%",
-      "destructive": "0 84.2% 60.2%",
-      "destructive_foreground": "0 0% 98%",
-      "border": "284 50% 89.8%",
+      "accent": "284 70% 32.5%",
+      "accent_foreground": "47 100% 50%",
+      "destructive": "47 100% 50%",
+      "destructive_foreground": "284 72% 16%",
+      "border": "47 100% 50%",
       "input": "0 0% 89.8%",
       "ring": "284 70% 32.5%",
       "chart_1": "12 76% 61%",
@@ -45,14 +45,14 @@
       "primary_foreground": "284 72% 16%",
       "secondary": "284 72% 22%",
       "secondary_foreground": "47 100% 50%",
-      "muted": "0 0% 14.9%",
-      "muted_foreground": "0 0% 63.9%",
+      "muted": "47 100% 25%",
+      "muted_foreground": "284 72% 16%",
       "accent": "47 100% 50%",
       "accent_foreground": "284 72% 16%",
       "destructive": "284 72% 22%",
       "destructive_foreground": "47 100% 50%",
       "border": "284 72% 16%",
-      "input": "0 0% 14.9%",
+      "input": "43 34% 14%",
       "ring": "284 70% 32.5%",
       "chart_1": "220 70% 50%",
       "chart_2": "160 60% 45%",
@@ -112,12 +112,7 @@
           "code": "scouter",
           "formResetBehavior": "preserve",
           "defaultValue": ""
-        }
-      ]
-    },
-    {
-      "name": "Autonomous",
-      "fields": [
+        },
         {
           "title": "Starting Position",
           "description": "The starting position of the robot",
@@ -134,6 +129,25 @@
           }
         },
         {
+          "title": "Intake Type",
+          "type": "select",
+          "required": false,
+          "code": "intakeType",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "FI": "Floor Intake",
+            "OB": "Over Bumper Intake",
+            "HP": "Human Player",
+            "NO": "No Intake"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "fields": [
+        {
           "title": "Fuel scored",
           "description": "The amount of fuel scored in auto",
           "type": "counter",
@@ -141,6 +155,7 @@
           "code": "fuelScoredAuto",
           "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         },
         {
@@ -178,6 +193,17 @@
       "name": "Tele-Op",
       "fields": [
         {
+          "title": "Total Cycles",
+          "description": "How many times the robot unloads and reloads its capacity during the match",
+          "type": "counter",
+          "required": false,
+          "code": "totalCycles",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
           "title": "Fuel Capacity",
           "description": "Approximate number of fuel that the robot can carry",
           "type": "select",
@@ -195,27 +221,6 @@
             "SixtySeventy": "60-70",
             "SeventyEighty": "70-80",
             "EightyPlus": "80+"
-          }
-        },
-        {
-          "title": "Cycles Per Shift",
-          "description": "How many times the robot unloads its capacity in one alliance shift",
-          "type": "select",
-          "required": false,
-          "code": "cyclesPerShift",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "One": "1",
-            "Two": "2",
-            "Three": "3",
-            "Four": "4",
-            "Five": "5",
-            "Six": "6",
-            "Seven": "7",
-            "Eight": "8",
-            "Nine": "9",
-            "TenPlus": "10+"
           }
         },
         {
@@ -311,41 +316,9 @@
           "max": 100
         }
       ]
-    },
-    {
-      "name": "Misc",
-      "fields": [
-        {
-          "title": "Intake Type",
-          "type": "select",
-          "required": false,
-          "code": "intakeType",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "FI": "Floor Intake",
-            "OB": "Over Bumper Intake",
-            "HP": "Human Player",
-            "NO": "No Intake"
-          }
-        },
-        {
-          "title": "Driver Proficiency",
-          "type": "select",
-          "required": false,
-          "code": "driverProficiency",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "G": "1 - In Training",
-            "G1": "2 - Newbie",
-            "G2": "3 - Standard",
-            "G3": "4 - Above Standard",
-            "G4": "5 - Excellent"
-          }
-        }
-      ]
     }
   ]
 }
+
+
 
