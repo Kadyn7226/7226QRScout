@@ -9,23 +9,23 @@
   },
   "theme": {
     "light": {
-      "background": "44 98% 59%",
+      "background": "0 0% 100%",
       "foreground": "0 0% 3.9%",
-      "card": "284 40% 50%",
-      "card_foreground": "284 72% 12%",
-      "popover": "47 100% 50%",
-      "popover_foreground": "284 70% 32.5%",
-      "primary": "284 72% 20%",
-      "primary_foreground": "47 100% 50%",
-      "secondary": "47 100% 50%",
-      "secondary_foreground": "284 72% 16%",
-      "muted": "47 100% 50%",
+      "card": "0 0% 100%",
+      "card_foreground": "0 0% 3.9%",
+      "popover": "0 0% 100%",
+      "popover_foreground": "0 0% 3.9%",
+      "primary": "354.44 71.3% 47.9%",
+      "primary_foreground": "0 85.7% 97.3%",
+      "secondary": "33 94% 40.5%",
+      "secondary_foreground": "0 0% 9%",
+      "muted": "0 0% 96.1%",
       "muted_foreground": "0 0% 45.1%",
-      "accent": "284 70% 32.5%",
-      "accent_foreground": "47 100% 50%",
-      "destructive": "47 100% 50%",
-      "destructive_foreground": "284 72% 16%",
-      "border": "47 100% 50%",
+      "accent": "0 0% 96.1%",
+      "accent_foreground": "0 0% 9%",
+      "destructive": "0 84.2% 60.2%",
+      "destructive_foreground": "0 0% 98%",
+      "border": "284 50% 89.8%",
       "input": "0 0% 89.8%",
       "ring": "284 70% 32.5%",
       "chart_1": "12 76% 61%",
@@ -45,14 +45,14 @@
       "primary_foreground": "284 72% 16%",
       "secondary": "284 72% 22%",
       "secondary_foreground": "47 100% 50%",
-      "muted": "47 100% 25%",
-      "muted_foreground": "284 72% 16%",
+      "muted": "0 0% 14.9%",
+      "muted_foreground": "0 0% 63.9%",
       "accent": "47 100% 50%",
       "accent_foreground": "284 72% 16%",
       "destructive": "284 72% 22%",
       "destructive_foreground": "47 100% 50%",
       "border": "284 72% 16%",
-      "input": "43 34% 14%",
+      "input": "0 0% 14.9%",
       "ring": "284 70% 32.5%",
       "chart_1": "220 70% 50%",
       "chart_2": "160 60% 45%",
@@ -81,7 +81,7 @@
           "description": "Starting Alliance",
           "type": "select",
           "required": false,
-          "code": "startAlliance",
+          "code": "SA",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -112,13 +112,18 @@
           "code": "scouter",
           "formResetBehavior": "preserve",
           "defaultValue": ""
-        },
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "fields": [
         {
           "title": "Starting Position",
           "description": "The starting position of the robot",
           "type": "select",
           "required": true,
-          "code": "startPosition",
+          "code": "Prsp",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -129,34 +134,14 @@
           }
         },
         {
-          "title": "Intake Type",
-          "type": "select",
-          "required": false,
-          "code": "intakeType",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "FI": "Floor Intake",
-            "OB": "Over Bumper Intake",
-            "HP": "Human Player",
-            "NO": "No Intake"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Autonomous",
-      "fields": [
-        {
           "title": "Fuel scored",
           "description": "The amount of fuel scored in auto",
-          "type": "counter",
+          "type": "number",
           "required": false,
-          "code": "fuelScoredAuto",
+          "code": "FIA",
           "formResetBehavior": "reset",
           "defaultValue": 0,
-          "min": 0,
-          "step": 1
+          "min": 0
         },
         {
           "title": "Climbed Tower",
@@ -173,7 +158,7 @@
           }
         },
         {
-          "title": "Attempted Climb Position",
+          "title": "Climb Position",
           "description": "Where left to right the robot climbed in auto",
           "type": "select",
           "required": false,
@@ -193,59 +178,23 @@
       "name": "Tele-Op",
       "fields": [
         {
-          "title": "Total Cycles",
-          "description": "How many times the robot unloads and reloads its capacity during the match",
-          "type": "counter",
-          "required": false,
-          "code": "totalCycles",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
           "title": "Fuel Capacity",
           "description": "Approximate number of fuel that the robot can carry",
-          "type": "select",
+          "type": "number",
           "required": false,
           "code": "fuelPerCycle",
           "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "OneTen": "1-10",
-            "TenTwenty": "10-20",
-            "TwentyThirty": "20-30",
-            "ThirtyForty": "30-40",
-            "FortyFifty": "40-50",
-            "FiftySixty": "50-60",
-            "SixtySeventy": "60-70",
-            "SeventyEighty": "70-80",
-            "EightyPlus": "80+"
-          }
+          "defaultValue": 0
         },
         {
-          "title": "Fuel scored",
-          "description": "The amount of fuel scored in auto",
+          "title": "Cycles Per Shift",
+          "description": "How many times the robot unloads its capacity in one alliance shift",
           "type": "counter",
           "required": false,
-          "code": "fuelScored",
+          "code": "cyclesPerShift",
           "formResetBehavior": "reset",
           "defaultValue": 0,
-          "min": 0,
           "step": 1
-        },
-        {
-          "title": "Shooting Location",
-          "type": "multi-select",
-          "required": false,
-          "code": "shootLocation",
-          "formResetBehavior": "reset",
-          "choices": {
-            "ANY": "Anywhere",
-            "LH": "Left of Hub",
-            "CH": "Center Hub",
-            "RH": "Right of Hub"
-          }
         },
         {
           "title": "Climbed Tower",
@@ -263,7 +212,7 @@
           }
         },
         {
-          "title": "Attempted Climb Position",
+          "title": "Climb Position",
           "description": "Where left to right the robot climbed",
           "type": "select",
           "required": false,
@@ -296,7 +245,7 @@
           "title": "Died/Fell Over",
           "type": "select",
           "required": false,
-          "code": "diedOrFell",
+          "code": "DFO",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -309,13 +258,60 @@
           "title": "Comments",
           "type": "text",
           "required": false,
-          "code": "comments",
+          "code": "co",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
           "max": 100
         }
       ]
+    },
+    {
+      "name": "Misc",
+      "fields": [
+        {
+          "title": "Intake Type",
+          "type": "select",
+          "required": false,
+          "code": "it",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "FI": "Floor Intake",
+            "OB": "Over Bumper Intake",
+            "NO": "No Intake"
+          }
+        },
+        {
+          "title": "Driver Proficiency",
+          "type": "select",
+          "required": false,
+          "code": "dp",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "G": "1 - In Training",
+            "G1": "2 - Newbie",
+            "G2": "3 - Excellent",
+            "G3": "4 - Perfectionist",
+            "G4": "5 - Above Standard"
+          }
+        },
+        {
+          "title": "Shooting Location",
+          "type": "multi-select",
+          "required": false,
+          "code": "sf",
+          "formResetBehavior": "reset",
+          "choices": {
+            "ANY": "Anywhere",
+            "LH": "Left of Hub",
+            "CH": "Center Hub",
+            "RH": "Right of Hub"
+          }
+        }
+      ]
     }
   ]
 }
+
