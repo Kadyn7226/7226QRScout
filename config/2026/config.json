@@ -1,59 +1,59 @@
 {
-  "title": "QRScout",
-  "page_title": "Rebuilt",
+  "title": "WavoQRScout",
+  "page_title": "7226 Rebuilt 2026",
   "delimiter": "\t",
-  "teamNumber": 2713,
+  "teamNumber": 7226,
   "floatingField": {
     "show": false,
     "codeValue": "teamNumber"
   },
   "theme": {
     "light": {
-      "background": "0 0% 100%",
+      "background": "44 98% 59%",
       "foreground": "0 0% 3.9%",
-      "card": "0 0% 100%",
-      "card_foreground": "0 0% 3.9%",
-      "popover": "0 0% 100%",
-      "popover_foreground": "0 0% 3.9%",
-      "primary": "354.44 71.3% 47.9%",
-      "primary_foreground": "0 85.7% 97.3%",
-      "secondary": "0 0% 96.1%",
-      "secondary_foreground": "0 0% 9%",
-      "muted": "0 0% 96.1%",
+      "card": "284 40% 50%",
+      "card_foreground": "284 72% 12%",
+      "popover": "47 100% 50%",
+      "popover_foreground": "284 70% 32.5%",
+      "primary": "284 72% 20%",
+      "primary_foreground": "47 100% 50%",
+      "secondary": "47 100% 50%",
+      "secondary_foreground": "284 72% 16%",
+      "muted": "47 100% 50%",
       "muted_foreground": "0 0% 45.1%",
-      "accent": "0 0% 96.1%",
-      "accent_foreground": "0 0% 9%",
-      "destructive": "0 84.2% 60.2%",
-      "destructive_foreground": "0 0% 98%",
-      "border": "0 0% 89.8%",
+      "accent": "284 70% 32.5%",
+      "accent_foreground": "47 100% 50%",
+      "destructive": "47 100% 50%",
+      "destructive_foreground": "284 72% 16%",
+      "border": "47 100% 50%",
       "input": "0 0% 89.8%",
-      "ring": "354.44 71.3% 47.9%",
+      "ring": "284 70% 32.5%",
       "chart_1": "12 76% 61%",
       "chart_2": "173 58% 39%",
       "chart_3": "197 37% 24%",
       "chart_4": "43 74% 66%",
-      "chart_5": "27 87% 67%"
+      "chart_5": "0 0% 0%"
     },
     "dark": {
-      "background": "0 0% 3.9%",
+      "background": "284 36% 12%",
       "foreground": "0 0% 98%",
-      "card": "0 0% 3.9%",
-      "card_foreground": "0 0% 98%",
-      "popover": "0 0% 3.9%",
-      "popover_foreground": "0 0% 98%",
-      "primary": "354.44 71.3% 47.9%",
-      "primary_foreground": "0 85.7% 97.3%",
-      "secondary": "0 0% 14.9%",
-      "secondary_foreground": "0 0% 98%",
-      "muted": "0 0% 14.9%",
-      "muted_foreground": "0 0% 63.9%",
-      "accent": "0 0% 14.9%",
-      "accent_foreground": "0 0% 98%",
-      "destructive": "0 62.8% 30.6%",
-      "destructive_foreground": "0 0% 98%",
-      "border": "0 0% 14.9%",
-      "input": "0 0% 14.9%",
-      "ring": "354.44 71.3% 47.9%",
+      "card": "43 34% 14%",
+      "card_foreground": "47 100% 50%",
+      "popover": "284 36% 12%",
+      "popover_foreground": "47 100% 50%",
+      "primary": "47 100% 50%",
+      "primary_foreground": "284 72% 16%",
+      "secondary": "284 72% 22%",
+      "secondary_foreground": "47 100% 50%",
+      "muted": "47 100% 25%",
+      "muted_foreground": "284 72% 16%",
+      "accent": "47 100% 50%",
+      "accent_foreground": "284 72% 16%",
+      "destructive": "284 72% 22%",
+      "destructive_foreground": "47 100% 50%",
+      "border": "284 72% 16%",
+      "input": "43 34% 14%",
+      "ring": "284 70% 32.5%",
       "chart_1": "220 70% 50%",
       "chart_2": "160 60% 45%",
       "chart_3": "30 80% 55%",
@@ -66,13 +66,34 @@
       "name": "Prematch",
       "fields": [
         {
-          "title": "Scouter Initials",
-          "description": "Enter the initials of the scouter.",
-          "type": "text",
+          "title": "Team Number",
+          "description": "The team number of the robot you're scouting",
+          "type": "number",
           "required": true,
-          "code": "scouter",
-          "formResetBehavior": "preserve",
-          "defaultValue": ""
+          "code": "teamNumber",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 19999
+        },
+        {
+          "title": "Starting Alliance",
+          "description": "Starting Alliance",
+          "type": "select",
+          "required": false,
+          "code": "startAlliance",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "R1": "Red 1",
+            "R2": "Red 2",
+            "R3": "Red 3",
+            "B1": "Blue 1",
+            "B2": "Blue 2",
+            "B3": "Blue 3",
+            "NS": "No Show",
+            "NA": "N/A"
+          }
         },
         {
           "title": "Match Number",
@@ -84,55 +105,42 @@
           "defaultValue": 1
         },
         {
-          "title": "Robot",
-          "description": "The robot you are scouting this match, based on driver station position.",
-          "type": "select",
+          "title": "Scouter Name",
+          "description": "Enter the name of the scouter.",
+          "type": "text",
           "required": true,
-          "code": "robot",
+          "code": "scouter",
           "formResetBehavior": "preserve",
-          "defaultValue": "R1",
-          "choices": {
-            "R1": "Red 1",
-            "R2": "Red 2",
-            "R3": "Red 3",
-            "B1": "Blue 1",
-            "B2": "Blue 2",
-            "B3": "Blue 3"
-          }
-        },
-        {
-          "title": "Team Number",
-          "description": "The team number of the robot you're scouting.",
-          "type": "number",
-          "required": true,
-          "code": "teamNumber",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "max": 19999
+          "defaultValue": ""
         },
         {
           "title": "Starting Position",
-          "description": "The starting position of the robot.",
+          "description": "The starting position of the robot",
           "type": "select",
           "required": true,
-          "code": "Prsp",
+          "code": "startPosition",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
             "R1": "Outpost Side",
             "R2": "Middle",
-            "R3": "Depot Side"
+            "R3": "Depot Side",
+            "NS": "No Show"
           }
         },
         {
-          "title": "No Show",
-          "description": "Check if the robot did not show up for the match.",
-          "type": "boolean",
+          "title": "Intake Type",
+          "type": "select",
           "required": false,
-          "code": "noShow",
+          "code": "intakeType",
           "formResetBehavior": "reset",
-          "defaultValue": false
+          "defaultValue": "",
+          "choices": {
+            "FI": "Floor Intake",
+            "OB": "Over Bumper Intake",
+            "HP": "Human Player",
+            "NO": "No Intake"
+          }
         }
       ]
     },
@@ -140,20 +148,11 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Moved?",
-          "description": "Check if the robot moved during autonomous.",
-          "type": "boolean",
-          "required": false,
-          "code": "Mved",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
           "title": "Fuel scored",
           "description": "The amount of fuel scored in auto",
           "type": "counter",
           "required": false,
-          "code": "FIA",
+          "code": "fuelScoredAuto",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
@@ -170,107 +169,84 @@
           "choices": {
             "No": "Didn't Climb",
             "L1": "Level 1",
-            "L2": "Level 2",
-            "L3": "Level 3",
             "F": "Failed Climb"
           }
         },
         {
-          "title": "Auto Foul",
-          "type": "counter",
+          "title": "Attempted Climb Position",
+          "description": "Where left to right the robot climbed in auto",
+          "type": "select",
           "required": false,
-          "code": "auf",
+          "code": "climbPositionAuto",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
+          "defaultValue": "No",
+          "choices": {
+            "No": "Didn't Climb",
+            "L": "Left",
+            "M": "Middle",
+            "R": "Right"
+          }
         }
       ]
     },
     {
-      "name": "Teleop",
+      "name": "Tele-Op",
       "fields": [
         {
-          "title": "Fuel Collected From Ground",
-          "description": "Collected fuel from the ground",
-          "type": "boolean",
-          "required": false,
-          "code": "FFG",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Fuel Collected From Player",
-          "description": "Collected fuel from the human player",
-          "type": "boolean",
-          "required": false,
-          "code": "FFHP",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Fuel Collected From Depot",
-          "description": "Collected fuel from the depot",
-          "type": "boolean",
-          "required": false,
-          "code": "FFD",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Robot Fuel Scored",
-          "description": "The amount of fuel scored in teleop (by the robot)",
+          "title": "Total Cycles",
+          "description": "How many times the robot unloads and reloads its capacity during the match",
           "type": "counter",
           "required": false,
-          "code": "FIT",
+          "code": "totalCycles",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Human Fuel Scored",
-          "description": "The amount of fuel scored directly by the human player",
+          "title": "Fuel Capacity",
+          "description": "Approximate number of fuel that the robot can carry",
+          "type": "select",
+          "required": false,
+          "code": "fuelPerCycle",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "OneTen": "1-10",
+            "TenTwenty": "10-20",
+            "TwentyThirty": "20-30",
+            "ThirtyForty": "30-40",
+            "FortyFifty": "40-50",
+            "FiftySixty": "50-60",
+            "SixtySeventy": "60-70",
+            "SeventyEighty": "70-80",
+            "EightyPlus": "80+"
+          }
+        },
+        {
+          "title": "Fuel scored",
+          "description": "The amount of fuel scored in auto",
           "type": "counter",
           "required": false,
-          "code": "HFS",
+          "code": "fuelScored",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Crossed Field/Played Defense?",
-          "type": "boolean",
+          "title": "Shooting Location",
+          "type": "multi-select",
           "required": false,
-          "code": "CFPDT",
+          "code": "shootLocation",
           "formResetBehavior": "reset",
-          "defaultValue": false
+          "choices": {
+            "ANY": "Anywhere",
+            "LH": "Left of Hub",
+            "CH": "Center Hub",
+            "RH": "Right of Hub"
+          }
         },
-        {
-          "title": "Was Robot Defended by Other Alliance?",
-          "type": "boolean",
-          "required": false,
-          "code": "DEFEg",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Touched Opposing Tower",
-          "description": "The number of times the opposing tower was touched",
-          "type": "counter",
-          "required": false,
-          "code": "Fou/Tech",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Endgame",
-      "fields": [
         {
           "title": "Climbed Tower",
           "type": "select",
@@ -287,20 +263,29 @@
           }
         },
         {
-          "title": "Died?",
-          "type": "boolean",
+          "title": "Attempted Climb Position",
+          "description": "Where left to right the robot climbed",
+          "type": "select",
           "required": false,
-          "code": "DEg",
+          "code": "climbPosition",
           "formResetBehavior": "reset",
-          "defaultValue": false
+          "defaultValue": "No",
+          "choices": {
+            "No": "Didn't Climb",
+            "L": "Left",
+            "M": "Middle",
+            "R": "Right"
+          }
         },
         {
-          "title": "Tipped/Fell Over?",
-          "type": "boolean",
+          "title": "Climbing Time",
+          "description": "How long does it take to climb?",
+          "type": "timer",
           "required": false,
-          "code": "TFOT",
+          "code": "climbTime",
           "formResetBehavior": "reset",
-          "defaultValue": false
+          "defaultValue": 0,
+          "outputType": "average"
         }
       ]
     },
@@ -308,45 +293,23 @@
       "name": "Postmatch",
       "fields": [
         {
-          "title": "Offense Skill",
-          "type": "range",
-          "required": false,
-          "code": "or",
-          "formResetBehavior": "reset",
-          "defaultValue": 3,
-          "min": 1,
-          "max": 5,
-          "step": 1
-        },
-        {
-          "title": "Defensive Skill",
-          "type": "range",
-          "required": false,
-          "code": "dr",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "max": 5,
-          "step": 1
-        },
-        {
-          "title": "Yellow/Red Card",
+          "title": "Died/Fell Over",
           "type": "select",
-          "required": true,
-          "code": "yc",
+          "required": false,
+          "code": "diedOrFell",
           "formResetBehavior": "reset",
-          "defaultValue": "No Card",
+          "defaultValue": "",
           "choices": {
-            "No Card": "No Card",
-            "Yellow": "Yellow Card",
-            "Red": "Red Card"
+            "D": "Died",
+            "FO": "Fell Over",
+            "NA": "N/A"
           }
         },
         {
           "title": "Comments",
           "type": "text",
           "required": false,
-          "code": "co",
+          "code": "comments",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
